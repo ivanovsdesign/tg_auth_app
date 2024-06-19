@@ -1,0 +1,33 @@
+<!-- src/components/TonWallet.vue
+<template>
+    <div>
+      <button @click="connectTon">Connect TON Wallet</button>
+      <div v-if="address">Address: {{ address }}</div>
+    </div>
+  </template>
+  
+  <script lang="ts">
+  import { defineComponent, ref } from 'vue';
+  import TonWeb from 'tonweb';
+  
+  export default defineComponent({
+    name: 'TonWallet',
+    setup() {
+      const address = ref<string | null>(null);
+  
+      const connectTon = async () => {
+        const tonweb = new TonWeb();
+        // Create a new wallet or use an existing one
+        const wallet = tonweb.wallet.create({publicKey: new Uint8Array([0, ...])});
+        const walletAddress = await wallet.getAddress();
+        address.value = walletAddress.toString();
+      };
+  
+      return {
+        connectTon,
+        address
+      };
+    }
+  });
+  </script>
+   -->
